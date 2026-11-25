@@ -1,5 +1,5 @@
 <?php require '../config/database.php';
-$id = (int)($_GET['id'] ?? 0);
+$id = (int) ($_GET['id'] ?? 0);
 if ($id) {
     $q = $pdo->prepare('DELETE FROM tarefas WHERE id=?');
     $q->execute([$id]);

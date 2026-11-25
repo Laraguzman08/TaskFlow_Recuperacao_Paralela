@@ -1,5 +1,5 @@
 <?php require '../config/database.php';
-$id = (int)($_POST['id'] ?? 0);
+$id = (int) ($_POST['id'] ?? 0);
 $d = [trim($_POST['titulo'] ?? ''), trim($_POST['descricao'] ?? ''), trim($_POST['responsavel'] ?? ''), $_POST['categoria'] ?? 'Geral', $_POST['prazo'] ?? date('Y-m-d'), $_POST['prioridade'] ?? 'Média', $_POST['status'] ?? 'Pendente'];
 if ($id) {
     $q = $pdo->prepare('UPDATE tarefas SET titulo=?,descricao=?,responsavel=?,categoria=?,prazo=?,prioridade=? WHERE id=?');
